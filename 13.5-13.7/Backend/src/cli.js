@@ -1,7 +1,7 @@
-require('dotenv').config()
+const { DATABASE_URL } = require('./util/config')
 const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize(process.env.EXTERNAL_DATABASE_URL, {
+const sequelize = new Sequelize(DATABASE_URL, {
   dialectOptions: {
     ssl: {
       require: true,
