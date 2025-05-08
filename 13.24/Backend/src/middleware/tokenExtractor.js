@@ -20,8 +20,7 @@ const tokenExtractor = async (req, res, next) => {
         }
         req.token = req.decodedToken
         req.session = session
-        console.log(req.token)
-        console.log(req.session)
+
       } catch{
         return res.status(401).json({ error: 'token invalid' })
       }
